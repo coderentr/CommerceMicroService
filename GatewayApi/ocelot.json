@@ -1,0 +1,31 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/{everycontroller}/{everymethod}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44332 //MarketApi launchSettings.Json dan kopyalayýp buraya ekladim.
+        }
+      ],
+      "UpstreamPathTemplate": "/api/market/{everycontroller}/{everymethod}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/{everycontroller}/{everymethod}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44312 //SalesApi launchSettings.Json deki   "sslPort" umun karþýlýðýný buraya yazdým. 
+        }
+      ],
+      "UpstreamPathTemplate": "/api/sales/{everycontroller}/{everymethod}",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:44324" //Gateway apimin url'i. luncsettings.json'dan alýyorum. Port numarasýný.
+  }
+} 
